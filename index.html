@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="ATRI Tours — India's premier pilgrimage & cultural tour specialist. Kashi, Chardham, Amarnath, Vaishnodevi & more. Founded by Sri Mohan Acharya, Tumakuru."/>
+<title>ATRI Tours — Sacred Journeys Across India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+/* ─── TOKENS ─────────────────────────────────────────── */
+:root{
+  --navy:   #05101F;
+  --navy-2: #0C1E38;
+  --navy-3: #152848;
+  --gold:   #C0954A;
+  --gold-l: #D9B06A;
+  --gold-xl:#F2D49A;
+  --white:  #FFFFFF;
+  --cream:  #F8F5EF;
+  --cream-2:#EDE8DF;
+  --text:   #0F1E35;
+  --muted:  #6B7A99;
+  --border: rgba(192,149,74,.18);
+  --border-light: rgba(255,255,255,.1);
+  --glass:  rgba(5,16,31,.65);
+  --r:      14px;
+  --r-lg:   22px;
+  --sh:     0 4px 30px rgba(5,16,31,.10);
+  --sh-lg:  0 12px 50px rgba(5,16,31,.18);
+  --t:      .35s cubic-bezier(.4,0,.2,1);
+  --font-d: 'Cormorant Garamond',serif;
+  --font-b: 'Inter',sans-serif;
+}
+
+/* ─── RESET ──────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-b);color:var(--text);background:var(--white);overflow-x:hidden;line-height:1.65}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;border:none;font-family:var(--font-b)}
+
+/* ─── UTILITIES ──────────────────────────────────────── */
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding:0 28px}
+.sec{padding:100px 0}
+.sec-dark{background:var(--navy)}
+.sec-cream{background:var(--cream)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.eyebrow::before,.eyebrow::after{content:'';width:28px;height:1px;background:var(--gold);opacity:.7}
+.h-disp{font-family:var(--font-d);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:600;line-height:1.1;color:var(--navy)}
+.h-disp em{font-style:italic;color:var(--gold)}
+.h-disp-light{color:var(--white)}
+.h-disp-light em{color:var(--gold-l)}
+.lead{font-size:1.05rem;color:var(--muted);line-height:1.8;max-width:540px}
+.lead-light{color:rgba(255,255,255,.65)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:50px;font-size:.88rem;font-weight:600;letter-spacing:.3px;transition:var(--t);position:relative;overflow:hidden;white-space:nowrap}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0);transition:var(--t)}
+.btn:hover::after{background:rgba(255,255,255,.07)}
+.btn-gold{background:var(--gold);color:var(--white)}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 28px rgba(192,149,74,.4)}
+.btn-outline-white{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5)}
+.btn-outline-white:hover{border-color:var(--white);background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(5,16,31,.3)}
+.btn-wa{background:#25D366;color:var(--white)}
+.btn-wa:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.4)}
+.tag{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:50px;border:1px solid var(--border)}
+.tag-gold{background:rgba(192,149,74,.1);color:var(--gold);border-color:rgba(192,149,74,.25)}
+.tag-white{background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.2)}
+.divider-gold{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:20px 0;border-radius:2px}
+.center .divider-gold{margin:20px auto}
+
+/* ─── FLOATING CTABUTS ───────────────────────────────── */
+.fab-wrap{position:fixed;bottom:28px;right:28px;display:flex;flex-direction:column;gap:12px;z-index:9999}
+.fab{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;box-shadow:0 6px 24px rgba(0,0,0,.25);transition:var(--t);position:relative}
+.fab:hover{transform:scale(1.1)}
+.fab-wa{background:#25D366}
+.fab-call{background:var(--gold)}
+.fab-tip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--navy);color:#fff;font-size:.72rem;font-family:var(--font-b);font-weight:500;padding:6px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:var(--t)}
+.fab-tip::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-right:none;border-left-color:var(--navy)}
+.fab:hover .fab-tip{opacity:1}
+.fab-pulse{animation:pulse 2.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4)}50%{box-shadow:0 6px 32px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.12)}}
+
+/* ─── NAVBAR ─────────────────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:var(--t)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:42px;height:42px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:1px;transition:var(--t)}
+.logo-text{line-height:1.05}
+.logo-name{font-family:var(--font-d);font-size:1.35rem;font-weight:700;color:var(--white);letter-spacing:.5px;transition:var(--t)}
+.logo-sub{font-size:.6rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.5);transition:var(--t)}
+.nav.solid .logo-name{color:var(--navy)}
+.nav.solid .logo-sub{color:var(--muted)}
+.nav.solid .logo-mark{border-color:var(--gold)}
+.nav.solid{background:rgba(255,255,255,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--cream-2),0 4px 20px rgba(5,16,31,.06)}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:.83rem;font-weight:500;letter-spacing:.2px;color:rgba(255,255,255,.82);transition:var(--t);position:relative}
+.nav-links a:hover{color:var(--gold-xl)}
+.nav.solid .nav-links a{color:var(--muted)}
+.nav.solid .nav-links a:hover{color:var(--gold)}
+.nav-links .n-cta{background:var(--gold);color:var(--white) !important;padding:10px 24px;border-radius:50px;font-weight:600}
+.nav-links .n-cta:hover{background:var(--gold-l);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:var(--t)}
+.nav.solid .burger span{background:var(--navy)}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-menu{display:none;position:fixed;top:76px;left:0;right:0;background:var(--white);z-index:999;padding:0;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;box-shadow:var(--sh-lg)}
+.mob-menu.open{max-height:600px;padding:20px 0 28px}
+.mob-menu a{display:block;padding:13px 28px;font-size:.95rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--cream-2);transition:var(--t)}
+.mob-menu a:hover{color:var(--gold);padding-left:36px}
+.mob-menu a:last-of-type{border-bottom:none}
+.mob-ctas{display:flex;gap:12px;padding:16px 28px 0;flex-wrap:wrap}
+.mob-ctas a{flex:1;min-width:120px;text-align:center;padding:13px 16px;border-radius:50px;font-weight:600;font-size:.87rem;display:flex;align-items:center;justify-content:center;gap:8px}
+
+/* ─── HERO ───────────────────────────────────────────── */
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.hero-mesh{position:absolute;inset:-50%;width:200%;height:200%;background:
+  radial-gradient(ellipse 60% 55% at 70% 30%,rgba(192,149,74,.18) 0%,transparent 60%),
+  radial-gradient(ellipse 45% 50% at 15% 70%,rgba(12,30,56,.9) 0%,transparent 60%),
+  radial-gradient(ellipse 80% 60% at 50% 50%,rgba(5,16,31,.95) 0%,transparent 100%);
+  animation:meshFloat 12s ease-in-out infinite}
+@keyframes meshFloat{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(-2%,1%) rotate(.5deg)}66%{transform:translate(1%,-1.5%) rotate(-.3deg)}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(192,149,74,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(192,149,74,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 40%,transparent 100%)}
+.hero-glow{position:absolute;top:20%;right:10%;width:500px;height:500px;background:radial-gradient(circle,rgba(192,149,74,.12) 0%,transparent 70%);animation:glowPulse 4s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}
+.hero-content{position:relative;z-index:2;padding:120px 0 80px;max-width:780px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.hero-eyebrow .dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:dotBlink 2s ease-in-out infinite}
+@keyframes dotBlink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--font-d);font-size:clamp(3rem,7vw,5.2rem);font-weight:600;color:var(--white);line-height:1.05;margin-bottom:26px}
+.hero h1 .italic{font-style:italic;color:var(--gold-l);display:block}
+.hero p{font-size:1.08rem;color:rgba(255,255,255,.6);line-height:1.85;max-width:520px;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:36px;left:0;right:0;z-index:2;display:flex;justify-content:center}
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.35);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;animation:scrollCue 2s ease-in-out infinite}
+.scroll-cue .line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent)}
+@keyframes scrollCue{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.hero-stats{position:relative;z-index:2;display:flex;gap:48px;flex-wrap:wrap;padding:36px 0 0;border-top:1px solid rgba(255,255,255,.08);margin-top:20px}
+.h-stat-num{font-family:var(--font-d);font-size:2.4rem;font-weight:700;color:var(--white);line-height:1}
+.h-stat-num span{color:var(--gold)}
+.h-stat-lbl{font-size:.72rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:5px}
+
+/* ─── TICKER ─────────────────────────────────────────── */
+.ticker-wrap{background:var(--gold);padding:14px 0;overflow:hidden}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:tickerScroll 28s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{display:inline-flex;align-items:center;gap:14px;padding:0 32px;font-size:.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--navy)}
+.ticker-item .sep{width:5px;height:5px;background:var(--navy);border-radius:50%;opacity:.4}
+
+/* ─── WHY CHOOSE (STRIP) ─────────────────────────────── */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--cream-2)}
+.strip-item{padding:40px 32px;border-right:1px solid var(--cream-2);transition:var(--t)}
+.strip-item:last-child{border-right:none}
+.strip-item:hover{background:var(--cream)}
+.strip-num{font-family:var(--font-d);font-size:.85rem;font-weight:500;color:var(--gold);letter-spacing:2px;margin-bottom:16px}
+.strip-icon{font-size:1.6rem;color:var(--gold);margin-bottom:14px}
+.strip-title{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+.strip-desc{font-size:.83rem;color:var(--muted);line-height:1.7}
+
+/* ─── SERVICES ───────────────────────────────────────── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
+.svc-card{position:relative;padding:44px 38px;background:var(--cream);transition:var(--t);overflow:hidden;cursor:default}
+.svc-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:var(--t)}
+.svc-card:hover{background:var(--white);box-shadow:var(--sh)}
+.svc-card:hover::before{transform:scaleY(1)}
+.svc-num{font-family:var(--font-d);font-size:.8rem;font-weight:500;color:rgba(192,149,74,.5);letter-spacing:2px;margin-bottom:20px}
+.svc-icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,rgba(192,149,74,.12),rgba(192,149,74,.05));display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:var(--gold);margin-bottom:20px;transition:var(--t)}
+.svc-card:hover .svc-icon{background:var(--gold);color:var(--white);transform:rotate(-5deg) scale(1.05)}
+.svc-name{font-family:var(--font-d);font-size:1.3rem;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.2}
+.svc-desc{font-size:.85rem;color:var(--muted);line-height:1.75}
+.svc-link{display:inline-flex;align-items:center;gap:7px;margin-top:20px;font-size:.8rem;font-weight:600;color:var(--gold);transition:var(--t)}
+.svc-link i{transition:var(--t)}
+.svc-card:hover .svc-link i{transform:translateX(5px)}
+
+/* ─── DESTINATIONS ───────────────────────────────────── */
+.dest-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(2,240px);gap:12px;margin-top:60px}
+.dest-card{position:relative;overflow:hidden;cursor:pointer;border-radius:var(--r)}
+.dest-card:hover .dest-overlay{opacity:.85}
+.dest-card:hover .dest-img-bg{transform:scale(1.06)}
+.dest-card.big{grid-column:span 5;grid-row:span 2}
+.dest-card.med{grid-column:span 4;grid-row:span 1}
+.dest-card.sm{grid-column:span 3;grid-row:span 1}
+.dest-img-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s cubic-bezier(.4,0,.2,1)}
+.dest-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,16,31,.92) 0%,rgba(5,16,31,.3) 50%,transparent 100%);transition:var(--t);opacity:.7}
+.dest-info{position:absolute;bottom:0;left:0;right:0;padding:24px 22px;z-index:1}
+.dest-tag{font-size:.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.dest-name{font-family:var(--font-d);font-size:1.4rem;font-weight:600;color:var(--white);line-height:1.15}
+.dest-card.big .dest-name{font-size:2rem}
+.dest-sub{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:5px}
+
+/* ─── STATS ──────────────────────────────────────────── */
+.stats-sec{padding:80px 0;background:var(--navy);position:relative;overflow:hidden}
+.stats-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(192,149,74,.06) 0%,transparent 70%)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:1}
+.stat-item{text-align:center;padding:48px 24px;position:relative}
+.stat-item::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,.07)}
+.stat-item:last-child::after{display:none}
+.stat-num{font-family:var(--font-d);font-size:3.5rem;font-weight:700;color:var(--white);line-height:1;display:flex;align-items:baseline;justify-content:center;gap:2px}
+.stat-num sup{font-size:1.8rem;color:var(--gold)}
+.stat-label{font-size:.72rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:12px}
+
+/* ─── ABOUT ──────────────────────────────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-visual{position:relative}
+.about-img{background:linear-gradient(135deg,var(--navy-3) 0%,var(--navy-2) 100%);border-radius:var(--r-lg);height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.about-img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(192,149,74,.1) 0%,transparent 70%)}
+.about-img-inner{text-align:center;position:relative;z-index:1}
+.about-emblem{width:120px;height:120px;border:1.5px solid rgba(192,149,74,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative}
+.about-emblem::before{content:'';position:absolute;inset:8px;border:1px solid rgba(192,149,74,.15);border-radius:50%}
+.about-emblem-text{font-family:var(--font-d);font-size:2rem;font-weight:700;color:var(--gold);letter-spacing:2px}
+.about-img-title{font-family:var(--font-d);font-size:1.4rem;color:rgba(255,255,255,.9);letter-spacing:1px}
+.about-img-sub{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:6px}
+.about-card{position:absolute;bottom:-20px;right:-20px;background:var(--gold);border-radius:var(--r);padding:24px 28px;text-align:center;box-shadow:0 12px 40px rgba(192,149,74,.35)}
+.about-card .ac-num{font-family:var(--font-d);font-size:2.8rem;font-weight:700;color:var(--white);line-height:1}
+.about-card .ac-lbl{font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:5px}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 32px}
+.val-item{display:flex;align-items:flex-start;gap:12px}
+.val-dot{width:20px;height:20px;border-radius:50%;background:rgba(192,149,74,.1);border:1.5px solid rgba(192,149,74,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.val-dot i{font-size:.55rem;color:var(--gold)}
+.val-text{font-size:.87rem;color:var(--muted);line-height:1.5}
+.val-text strong{display:block;font-size:.9rem;color:var(--navy);margin-bottom:3px}
+.founder{display:flex;align-items:center;gap:16px;padding:20px 22px;background:var(--cream);border-radius:var(--r);border-left:3px solid var(--gold)}
+.founder-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--gold);flex-shrink:0}
+.founder-info strong{display:block;font-size:.95rem;color:var(--navy);font-weight:600}
+.founder-info span{font-size:.78rem;color:var(--muted)}
+
+/* ─── TOUR PACKAGES ──────────────────────────────────── */
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px}
+.pkg-card{background:var(--white);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--cream-2);transition:var(--t);display:flex;flex-direction:column}
+.pkg-card:hover{transform:translateY(-8px);box-shadow:var(--sh-lg);border-color:rgba(192,149,74,.25)}
+.pkg-visual{height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.pkg-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(5,16,31,.6),transparent 50%)}
+.pkg-v1{background:linear-gradient(135deg,#060D1F 0%,#152848 60%,#1a3060 100%)}
+.pkg-v2{background:linear-gradient(135deg,#08111A 0%,#0D2040 50%,#183060 100%)}
+.pkg-v3{background:linear-gradient(135deg,#0A1A0A 0%,#162B16 50%,#1E4020 100%)}
+.pkg-v4{background:linear-gradient(135deg,#1A0A0A 0%,#2D1010 50%,#401818 100%)}
+.pkg-v5{background:linear-gradient(135deg,#1A1208 0%,#2D2010 50%,#3D2A08 100%)}
+.pkg-v6{background:linear-gradient(135deg,#0A0A1A 0%,#101030 50%,#181850 100%)}
+.pkg-icon{font-size:3rem;color:rgba(192,149,74,.7);position:relative;z-index:1}
+.pkg-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--gold);color:var(--white);font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:50px}
+.pkg-body{padding:22px 22px 20px;flex:1;display:flex;flex-direction:column}
+.pkg-name{font-family:var(--font-d);font-size:1.25rem;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.2}
+.pkg-meta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.pkg-meta span{font-size:.75rem;color:var(--muted);display:flex;align-items:center;gap:5px}
+.pkg-meta i{color:var(--gold);font-size:.7rem}
+.pkg-desc{font-size:.83rem;color:var(--muted);line-height:1.7;flex:1;margin-bottom:18px}
+.pkg-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--cream-2);margin-top:auto}
+.pkg-price-label{font-size:.68rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.pkg-price{font-family:var(--font-d);font-size:1.1rem;font-weight:600;color:var(--navy)}
+.pkg-enquire{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;background:var(--gold);color:var(--white);border-radius:50px;font-size:.78rem;font-weight:600;transition:var(--t)}
+.pkg-enquire:hover{background:var(--gold-l);transform:translateY(-1px)}
+.pkg-enquire i{font-size:.85rem}
+
+/* ─── TESTIMONIALS ───────────────────────────────────── */
+.testi-sec{background:var(--navy);padding:100px 0;position:relative;overflow:hidden}
+.testi-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(192,149,74,.04) 1px,transparent 1px);background-size:40px 40px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px;position:relative;z-index:1}
+.testi-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r-lg);padding:32px 28px;transition:var(--t);position:relative;overflow:hidden}
+.testi-card::before{content:'\201C';font-family:var(--font-d);font-size:8rem;color:var(--gold);opacity:.1;position:absolute;top:-10px;left:14px;line-height:1;pointer-events:none}
+.testi-card:hover{background:rgba(255,255,255,.07);border-color:rgba(192,149,74,.2);transform:translateY(-4px)}
+.testi-stars{display:flex;gap:4px;margin-bottom:16px}
+.testi-stars i{color:var(--gold);font-size:.8rem}
+.testi-text{font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:24px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:14px}
+.testi-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-l));display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:1.1rem;font-weight:700;color:var(--navy);flex-shrink:0}
+.testi-info strong{display:block;font-size:.88rem;color:rgba(255,255,255,.9);font-weight:600}
+.testi-info span{font-size:.75rem;color:rgba(255,255,255,.35);letter-spacing:.5px}
+
+/* ─── CTA STRIP ──────────────────────────────────────── */
+.cta-strip{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-3) 50%,#1a2a40 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(192,149,74,.1) 0%,transparent 70%)}
+.cta-strip-inner{position:relative;z-index:1}
+.cta-strip h2{font-family:var(--font-d);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:600;color:var(--white);margin:14px 0 16px;line-height:1.15}
+.cta-strip h2 em{font-style:italic;color:var(--gold-l)}
+.cta-strip p{font-size:1rem;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 36px;line-height:1.75}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ─── CONTACT ────────────────────────────────────────── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+.c-info-title{font-family:var(--font-d);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:28px}
+.c-item{display:flex;gap:16px;margin-bottom:26px;align-items:flex-start}
+.c-icon{width:46px;height:46px;border-radius:12px;background:rgba(192,149,74,.1);border:1px solid rgba(192,149,74,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--gold);flex-shrink:0}
+.c-detail strong{display:block;font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.c-detail p,.c-detail a{font-size:.93rem;color:var(--navy);font-weight:500;line-height:1.5;transition:var(--t)}
+.c-detail a:hover{color:var(--gold)}
+.c-actions{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.c-actions a{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:50px;font-size:.88rem;font-weight:600;transition:var(--t)}
+.c-wa{background:#25D366;color:var(--white)}
+.c-wa:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.35)}
+.c-call{background:var(--navy);color:var(--white)}
+.c-call:hover{background:var(--navy-3);transform:translateY(-2px)}
+.c-form-wrap{background:var(--white);border-radius:var(--r-lg);padding:40px;border:1px solid var(--cream-2);box-shadow:var(--sh)}
+.c-form-title{font-family:var(--font-d);font-size:1.6rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+.c-form-sub{font-size:.85rem;color:var(--muted);margin-bottom:28px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-group{margin-bottom:18px}
+.f-group label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.f-group input,.f-group select,.f-group textarea{width:100%;padding:13px 16px;border:1.5px solid var(--cream-2);border-radius:10px;font-family:var(--font-b);font-size:.88rem;color:var(--text);background:var(--white);transition:var(--t);outline:none;-webkit-appearance:none}
+.f-group input:focus,.f-group select:focus,.f-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(192,149,74,.1)}
+.f-group textarea{resize:vertical;min-height:100px}
+.f-submit{width:100%;padding:16px;background:var(--gold);color:var(--white);border-radius:50px;font-size:.95rem;font-weight:600;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:10px;transition:var(--t)}
+.f-submit:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 28px rgba(192,149,74,.4)}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+.footer{background:var(--navy);padding:80px 0 0;position:relative;overflow:hidden}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:48px;padding-bottom:64px}
+.f-brand-desc{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.8;margin:20px 0 28px;max-width:300px}
+.social-row{display:flex;gap:10px}
+.soc{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.45);font-size:.85rem;transition:var(--t)}
+.soc:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.f-col-title{font-size:.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:22px;position:relative;padding-bottom:14px}
+.f-col-title::after{content:'';position:absolute;bottom:0;left:0;width:24px;height:1.5px;background:var(--gold)}
+.f-link{display:block;font-size:.84rem;color:rgba(255,255,255,.38);padding:5px 0;transition:var(--t)}
+.f-link:hover{color:var(--gold-l);padding-left:6px}
+.f-contact-item{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}
+.f-contact-item i{color:var(--gold);font-size:.8rem;margin-top:3px;width:14px;flex-shrink:0}
+.f-contact-item p,.f-contact-item a{font-size:.82rem;color:rgba(255,255,255,.38);line-height:1.6;transition:var(--t)}
+.f-contact-item a:hover{color:var(--gold-l)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.78rem;color:rgba(255,255,255,.25)}
+.f-bot-links{display:flex;gap:22px}
+.f-bot-links a{font-size:.78rem;color:rgba(255,255,255,.25);transition:var(--t)}
+.f-bot-links a:hover{color:rgba(255,255,255,.6)}
+
+/* ─── BACK TO TOP ────────────────────────────────────── */
+.btt{position:fixed;bottom:98px;right:28px;width:40px;height:40px;background:rgba(5,16,31,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:.8rem;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(12px);transition:var(--t);z-index:998}
+.btt.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.btt:hover{background:var(--gold);border-color:var(--gold);color:var(--white)}
+
+/* ─── SCROLL REVEAL ──────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:1100px){
+  .dest-grid{grid-template-rows:repeat(2,200px)}
+  .dest-card.big{grid-column:span 6}
+  .dest-card.med{grid-column:span 6}
+  .dest-card.sm{grid-column:span 4}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item::after{display:none}
+  .stat-item:nth-child(odd)::after{content:'';display:block;position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(255,255,255,.07)}
+}
+@media(max-width:900px){
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .strip-item:nth-child(2){border-right:none}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-card{right:0;bottom:-16px}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .pkg-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:680px){
+  .sec{padding:70px 0}
+  .strip{grid-template-columns:1fr}
+  .strip-item{border-right:none;border-bottom:1px solid var(--cream-2)}
+  .strip-item:last-child{border-bottom:none}
+  .dest-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:10px}
+  .dest-card.big,.dest-card.med,.dest-card.sm{grid-column:span 1;grid-row:span 1;height:180px}
+  .svc-grid{grid-template-columns:1fr}
+  .pkg-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+  .hero-stats{gap:28px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .about-visual{max-width:460px;margin:0 auto}
+  .about-img{height:400px}
+  .c-actions{flex-direction:row}
+  .fab-wrap{bottom:20px;right:18px;gap:10px}
+  .fab{width:50px;height:50px;font-size:1.15rem}
+  .btt{bottom:88px;right:18px}
+}
+@media(max-width:400px){
+  .hero h1{font-size:2.6rem}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ FLOATING CTAs ══════════════ -->
+<div class="fab-wrap">
+  <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20am%20interested%20in%20your%20tour%20packages.%20Please%20share%20details." class="fab fab-wa fab-pulse" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="fab-tip">Chat on WhatsApp</span>
+  </a>
+  <a href="tel:+918088017328" class="fab fab-call" aria-label="Call Now">
+    <i class="fas fa-phone"></i>
+    <span class="fab-tip">Call Mohan ji</span>
+  </a>
+</div>
+
+<!-- ══════════════ BACK TO TOP ══════════════ -->
+<button class="btt" id="btt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <div class="logo-mark">AT</div>
+        <div class="logo-text">
+          <div class="logo-name">ATRI Tours</div>
+          <div class="logo-sub">Private Limited</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#about">About</a>
+        <a href="#packages">Packages</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact" class="n-cta">Book a Tour</a>
+      </div>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#destinations" onclick="closeMob()">Destinations</a>
+  <a href="#about" onclick="closeMob()">About Us</a>
+  <a href="#packages" onclick="closeMob()">Tour Packages</a>
+  <a href="#testimonials" onclick="closeMob()">Reviews</a>
+  <div class="mob-ctas">
+    <a href="https://wa.me/918088017328" class="btn-wa" style="background:#25D366;color:#fff;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a href="tel:+918088017328" class="btn-navy" style="background:var(--navy);color:#fff;"><i class="fas fa-phone"></i> Call Now</a>
+  </div>
+  <a href="#contact" onclick="closeMob()" style="margin:12px 28px 0;display:block;text-align:center;background:var(--gold);color:#fff;padding:14px;border-radius:50px;font-weight:600;font-size:.9rem;">Book a Tour</a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="hero-mesh"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        India's Premier Pilgrimage & Cultural Tour Specialist
+        <span class="dot" style="animation-delay:.8s"></span>
+      </div>
+      <h1>
+        Journey Into
+        <em class="italic">Sacred India</em>
+      </h1>
+      <p>Authentic pilgrimage experiences curated by <strong style="color:rgba(255,255,255,.85)">Sri Mohan Acharya</strong> — 10 years of trust, 2500+ pilgrims served. Kashi, Chardham, Amarnath & beyond.</p>
+      <div class="hero-btns">
+        <a href="#packages" class="btn btn-gold"><i class="fas fa-compass"></i> Explore Packages</a>
+        <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20want%20to%20plan%20a%20pilgrimage%20tour." class="btn btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+        <a href="tel:+918088017328" class="btn btn-outline-white"><i class="fas fa-phone"></i> +91 80880 17328</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><div class="h-stat-num">2500<span>+</span></div><div class="h-stat-lbl">Happy Pilgrims</div></div>
+        <div class="h-stat"><div class="h-stat-num">300<span>+</span></div><div class="h-stat-lbl">Group Tours</div></div>
+        <div class="h-stat"><div class="h-stat-num">500<span>+</span></div><div class="h-stat-lbl">Experiences</div></div>
+        <div class="h-stat"><div class="h-stat-num">10<span>+</span></div><div class="h-stat-lbl">Years of Trust</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-cue">
+      <span>Scroll</span>
+      <div class="line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TICKER ══════════════ -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">Kashi Varanasi<span class="sep"></span></span>
+    <span class="ticker-item">Chardham Yatra<span class="sep"></span></span>
+    <span class="ticker-item">Amarnath<span class="sep"></span></span>
+    <span class="ticker-item">Vaishnodevi<span class="sep"></span></span>
+    <span class="ticker-item">Tirupati Balaji<span class="sep"></span></span>
+    <span class="ticker-item">Rameswaram<span class="sep"></span></span>
+    <span class="ticker-item">Badrinath<span class="sep"></span></span>
+    <span class="ticker-item">Kedarnath<span class="sep"></span></span>
+    <span class="ticker-item">Gangotri<span class="sep"></span></span>
+    <span class="ticker-item">Puri Jagannath<span class="sep"></span></span>
+    <span class="ticker-item">Dwarka<span class="sep"></span></span>
+    <span class="ticker-item">Shirdi<span class="sep"></span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item">Kashi Varanasi<span class="sep"></span></span>
+    <span class="ticker-item">Chardham Yatra<span class="sep"></span></span>
+    <span class="ticker-item">Amarnath<span class="sep"></span></span>
+    <span class="ticker-item">Vaishnodevi<span class="sep"></span></span>
+    <span class="ticker-item">Tirupati Balaji<span class="sep"></span></span>
+    <span class="ticker-item">Rameswaram<span class="sep"></span></span>
+    <span class="ticker-item">Badrinath<span class="sep"></span></span>
+    <span class="ticker-item">Kedarnath<span class="sep"></span></span>
+    <span class="ticker-item">Gangotri<span class="sep"></span></span>
+    <span class="ticker-item">Puri Jagannath<span class="sep"></span></span>
+    <span class="ticker-item">Dwarka<span class="sep"></span></span>
+    <span class="ticker-item">Shirdi<span class="sep"></span></span>
+  </div>
+</div>
+
+<!-- ══════════════ WHY CHOOSE ══════════════ -->
+<section class="sec sec-cream">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:8px">
+      <div class="eyebrow" style="justify-content:center">Why Choose ATRI Tours</div>
+      <h2 class="h-disp" style="text-align:center">The ATRI Difference</h2>
+      <div class="divider-gold" style="margin:18px auto 0"></div>
+    </div>
+    <div class="strip reveal" style="margin-top:50px">
+      <div class="strip-item">
+        <div class="strip-num">01</div>
+        <div class="strip-icon"><i class="fas fa-certificate"></i></div>
+        <div class="strip-title">10+ Years of Expertise</div>
+        <div class="strip-desc">Over a decade of organizing 300+ devotional group tours to India's most sacred sites with perfection.</div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">02</div>
+        <div class="strip-icon"><i class="fas fa-heart"></i></div>
+        <div class="strip-title">Senior-Friendly Care</div>
+        <div class="strip-desc">Specially crafted itineraries with extra comfort, accessibility, and personalized attention for senior pilgrims.</div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">03</div>
+        <div class="strip-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="strip-title">Safe & Transparent</div>
+        <div class="strip-desc">Soulful, secure travel with verified stays, experienced guides, and zero hidden charges.</div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">04</div>
+        <div class="strip-icon"><i class="fas fa-sliders"></i></div>
+        <div class="strip-title">Fully Customizable</div>
+        <div class="strip-desc">Every tour is tailored to your group's needs, budget, and spiritual goals — no one-size-fits-all here.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SERVICES ══════════════ -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">What We Offer</div>
+      <h2 class="h-disp">Our Services</h2>
+      <div class="divider-gold"></div>
+      <p class="lead">From sacred pilgrimages to cultural discoveries — we craft journeys that nourish the soul and create lasting memories.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-num">01</div>
+        <div class="svc-icon"><i class="fas fa-place-of-worship"></i></div>
+        <div class="svc-name">Pilgrimage & Spiritual Tours</div>
+        <div class="svc-desc">Authentic devotional journeys to India's most revered shrines — Kashi, Chardham, Amarnath, Vaishnodevi and more, with proper rituals and expert guidance.</div>
+        <a href="#contact" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-num">02</div>
+        <div class="svc-icon"><i class="fas fa-landmark"></i></div>
+        <div class="svc-name">Cultural & Heritage Tours</div>
+        <div class="svc-desc">Immerse in India's living traditions — ancient temples, royal palaces, vibrant festivals and heritage walks that bring history to life.</div>
+        <a href="#contact" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-delay-3">
+        <div class="svc-num">03</div>
+        <div class="svc-icon"><i class="fas fa-mountain"></i></div>
+        <div class="svc-name">Adventure & Nature Tours</div>
+        <div class="svc-desc">From Himalayan treks to coastal escapes — thrilling nature experiences for the adventurous soul seeking the untamed beauty of India.</div>
+        <a href="#contact" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-num">04</div>
+        <div class="svc-icon"><i class="fas fa-spa"></i></div>
+        <div class="svc-name">Wellness & Ayurveda Retreats</div>
+        <div class="svc-desc">Rejuvenate mind, body and spirit through traditional Ayurvedic treatments, yoga retreats and holistic wellness journeys across India.</div>
+        <a href="#contact" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-num">05</div>
+        <div class="svc-icon"><i class="fas fa-globe"></i></div>
+        <div class="svc-name">International Tours</div>
+        <div class="svc-desc">Explore sacred and cultural destinations beyond India. Tailored international pilgrimages and curated tours designed around your preferences.</div>
+        <a href="#contact" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card reveal reveal-delay-3">
+        <div class="svc-num">06</div>
+        <div class="svc-icon"><i class="fas fa-users"></i></div>
+        <div class="svc-name">Group, Corporate & Family Tours</div>
+        <div class="svc-desc">Custom travel for families, corporate teams, and social groups of any size. Memorable experiences crafted with precision and care.</div>
+        <a href="#contact" class="svc-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ DESTINATIONS ══════════════ -->
+<section class="sec sec-cream" id="destinations">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">Sacred Destinations</div>
+      <h2 class="h-disp" style="text-align:center">Popular Pilgrimage Sites</h2>
+      <div class="divider-gold" style="margin:18px auto"></div>
+      <p class="lead" style="text-align:center;margin:0 auto">Journey to the most revered spiritual destinations in India — each carrying centuries of devotion, culture and divine energy.</p>
+    </div>
+    <div class="dest-grid reveal">
+      <div class="dest-card big">
+        <div class="dest-img-bg" style="background:linear-gradient(160deg,#07111F 0%,#152848 40%,#1a3565 100%)">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:8rem;opacity:.12">🕉</div>
+        </div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <span class="dest-tag">Most Visited</span>
+          <div class="dest-name">Kashi Varanasi</div>
+          <div class="dest-sub">The eternal city of Shiva on the holy Ganges</div>
+        </div>
+      </div>
+      <div class="dest-card med">
+        <div class="dest-img-bg" style="background:linear-gradient(135deg,#08131F 0%,#0a2040 50%,#0e2d60 100%)">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6rem;opacity:.12">⛰</div>
+        </div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <span class="dest-tag">Himalayan Yatra</span>
+          <div class="dest-name">Chardham Yatra</div>
+          <div class="dest-sub">Badrinath · Kedarnath · Gangotri · Yamunotri</div>
+        </div>
+      </div>
+      <div class="dest-card sm">
+        <div class="dest-img-bg" style="background:linear-gradient(135deg,#0d1f0d 0%,#142d14 50%,#1a3d1a 100%)">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:.15">🏔</div>
+        </div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <span class="dest-tag">Seasonal</span>
+          <div class="dest-name">Amarnath</div>
+        </div>
+      </div>
+      <div class="dest-card sm">
+        <div class="dest-img-bg" style="background:linear-gradient(135deg,#1f0808 0%,#2d1010 50%,#3d1515 100%)">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;opacity:.12">🙏</div>
+        </div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <span class="dest-tag">All Year</span>
+          <div class="dest-name">Vaishnodevi</div>
+        </div>
+      </div>
+      <div class="dest-card med">
+        <div class="dest-img-bg" style="background:linear-gradient(135deg,#1a1208 0%,#2a1e08 50%,#3a2808 100%)">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6rem;opacity:.12">🌅</div>
+        </div>
+        <div class="dest-overlay"></div>
+        <div class="dest-info">
+          <span class="dest-tag">South India</span>
+          <div class="dest-name">Tirupati & Rameswaram</div>
+          <div class="dest-sub">South India's holiest temple circuit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ STATS ══════════════ -->
+<div class="stats-sec">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span class="counter" data-target="2500">0</span><sup>+</sup></div>
+        <div class="stat-label">Happy Pilgrims</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num"><span class="counter" data-target="300">0</span><sup>+</sup></div>
+        <div class="stat-label">Group Tours Completed</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num"><span class="counter" data-target="500">0</span><sup>+</sup></div>
+        <div class="stat-label">Tour Experiences</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num"><span class="counter" data-target="10">0</span><sup>+</sup></div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img">
+          <div class="about-img-inner">
+            <div class="about-emblem">
+              <div class="about-emblem-text">AT</div>
+            </div>
+            <div class="about-img-title">ATRI Tours</div>
+            <div class="about-img-sub">Private Limited · Est. 2014</div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="ac-num">10+</div>
+          <div class="ac-lbl">Years of<br>Excellence</div>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-2">
+        <div class="eyebrow">Our Story</div>
+        <h2 class="h-disp">Founded on Faith,<br><em>Built on Trust</em></h2>
+        <div class="divider-gold"></div>
+        <p style="font-size:.93rem;color:var(--muted);line-height:1.85;margin-bottom:16px">Founded by <strong style="color:var(--navy)">Sri Mohan Acharya</strong>, ATRI Tours Private Limited has been India's trusted pilgrimage and cultural travel specialist for over a decade. From the sacred ghats of Kashi to the snow-capped Himalayan shrines — we have guided <strong style="color:var(--navy)">2500+ pilgrims</strong> on transformative journeys.</p>
+        <p style="font-size:.93rem;color:var(--muted);line-height:1.85;margin-bottom:24px">Our mission is to deliver <strong style="color:var(--navy)">soulful, secure, and seamless travel</strong> that fosters peace, faith, and spiritual connection. We specialize in senior-friendly services, ensuring every pilgrim feels safe, cared for, and at home.</p>
+        <div class="values">
+          <div class="val-item"><div class="val-dot"><i class="fas fa-check"></i></div><div class="val-text"><strong>Devotion</strong>Every journey treated as sacred service</div></div>
+          <div class="val-item"><div class="val-dot"><i class="fas fa-check"></i></div><div class="val-text"><strong>Integrity</strong>Full transparency, no hidden costs</div></div>
+          <div class="val-item"><div class="val-dot"><i class="fas fa-check"></i></div><div class="val-text"><strong>Senior Care</strong>Personalized comfort for elders</div></div>
+          <div class="val-item"><div class="val-dot"><i class="fas fa-check"></i></div><div class="val-text"><strong>Excellence</strong>Quality, punctuality & precision</div></div>
+          <div class="val-item"><div class="val-dot"><i class="fas fa-check"></i></div><div class="val-text"><strong>Heritage</strong>Preserving India's spiritual legacy</div></div>
+          <div class="val-item"><div class="val-dot"><i class="fas fa-check"></i></div><div class="val-text"><strong>Safety</strong>Verified stays & expert guides</div></div>
+        </div>
+        <div class="founder">
+          <div class="founder-av">M</div>
+          <div class="founder-info">
+            <strong>Sri Mohan Acharya</strong>
+            <span>Founder & Director — ATRI Tours Private Limited</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TOUR PACKAGES ══════════════ -->
+<section class="sec sec-cream" id="packages">
+  <div class="wrap">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
+      <div>
+        <div class="eyebrow">Tour Packages</div>
+        <h2 class="h-disp">Popular Pilgrimages</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20please%20share%20all%20available%20tour%20packages%20and%20pricing." class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> View All Packages</a>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card reveal reveal-delay-1">
+        <div class="pkg-visual pkg-v1">
+          <i class="fas fa-water pkg-icon"></i>
+          <span class="pkg-badge">Most Popular</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name">Kashi Varanasi Darshan</div>
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 4 Days / 3 Nights</span>
+            <span><i class="fas fa-map-marker-alt"></i> Varanasi, UP</span>
+          </div>
+          <div class="pkg-desc">Experience the divine Ganga Aarti, Kashi Vishwanath Temple darshan, and sacred ghats of Varanasi — the city that liberates the soul.</div>
+          <div class="pkg-footer">
+            <div><div class="pkg-price-label">Starting From</div><div class="pkg-price">On Request</div></div>
+            <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20am%20interested%20in%20Kashi%20Varanasi%20Darshan%20package.%20Please%20share%20details%20and%20pricing." class="pkg-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-visual pkg-v2">
+          <i class="fas fa-mountain pkg-icon"></i>
+          <span class="pkg-badge">Bestseller</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name">Chardham Yatra</div>
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 12 Days / 11 Nights</span>
+            <span><i class="fas fa-map-marker-alt"></i> Uttarakhand</span>
+          </div>
+          <div class="pkg-desc">The ultimate Himalayan pilgrimage — Badrinath, Kedarnath, Gangotri & Yamunotri. A divine journey through four holy shrines.</div>
+          <div class="pkg-footer">
+            <div><div class="pkg-price-label">Starting From</div><div class="pkg-price">On Request</div></div>
+            <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20am%20interested%20in%20Chardham%20Yatra%20package.%20Please%20share%20details%20and%20pricing." class="pkg-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card reveal reveal-delay-3">
+        <div class="pkg-visual pkg-v3">
+          <i class="fas fa-snowflake pkg-icon"></i>
+          <span class="pkg-badge">Seasonal</span>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name">Amarnath Yatra</div>
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 6 Days / 5 Nights</span>
+            <span><i class="fas fa-map-marker-alt"></i> Kashmir</span>
+          </div>
+          <div class="pkg-desc">Trek to the sacred Amarnath cave shrine at 3,888m. The abode of Lord Shiva amidst breathtaking Himalayan vistas.</div>
+          <div class="pkg-footer">
+            <div><div class="pkg-price-label">Starting From</div><div class="pkg-price">On Request</div></div>
+            <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20am%20interested%20in%20Amarnath%20Yatra%20package.%20Please%20share%20details%20and%20pricing." class="pkg-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card reveal reveal-delay-1">
+        <div class="pkg-visual pkg-v4">
+          <i class="fas fa-place-of-worship pkg-icon"></i>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name">Vaishnodevi Yatra</div>
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 4 Days / 3 Nights</span>
+            <span><i class="fas fa-map-marker-alt"></i> Katra, J&K</span>
+          </div>
+          <div class="pkg-desc">Seek the blessings of Mata Vaishno Devi in the holy Trikuta Hills. One of India's most revered pilgrimages for all ages.</div>
+          <div class="pkg-footer">
+            <div><div class="pkg-price-label">Starting From</div><div class="pkg-price">On Request</div></div>
+            <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20am%20interested%20in%20Vaishnodevi%20Yatra%20package.%20Please%20share%20details%20and%20pricing." class="pkg-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card reveal reveal-delay-2">
+        <div class="pkg-visual pkg-v5">
+          <i class="fas fa-sun pkg-icon"></i>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name">South India Temple Tour</div>
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> 8 Days / 7 Nights</span>
+            <span><i class="fas fa-map-marker-alt"></i> South India</span>
+          </div>
+          <div class="pkg-desc">Tirupati Balaji, Rameswaram, Madurai Meenakshi — a grand South India pilgrimage through magnificent Dravidian temples.</div>
+          <div class="pkg-footer">
+            <div><div class="pkg-price-label">Starting From</div><div class="pkg-price">On Request</div></div>
+            <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20am%20interested%20in%20South%20India%20Temple%20Tour%20package.%20Please%20share%20details%20and%20pricing." class="pkg-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+          </div>
+        </div>
+      </div>
+      <div class="pkg-card reveal reveal-delay-3">
+        <div class="pkg-visual pkg-v6">
+          <i class="fas fa-wand-magic-sparkles pkg-icon"></i>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-name">Custom Group / Family Tour</div>
+          <div class="pkg-meta">
+            <span><i class="fas fa-clock"></i> Flexible Duration</span>
+            <span><i class="fas fa-map-marker-alt"></i> Your Choice</span>
+          </div>
+          <div class="pkg-desc">Tell us your destination and group size — we'll craft a fully personalized itinerary that fits your spiritual goals and budget.</div>
+          <div class="pkg-footer">
+            <div><div class="pkg-price-label">Fully</div><div class="pkg-price">Customized</div></div>
+            <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20need%20a%20custom%20group%20tour%20package.%20Please%20help%20me%20plan." class="pkg-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section class="testi-sec" id="testimonials">
+  <div class="wrap">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+      <div>
+        <div class="eyebrow">Testimonials</div>
+        <h2 class="h-disp h-disp-light">What Our Pilgrims Say</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.35);max-width:320px;text-align:right;line-height:1.7">2500+ pilgrims have experienced the ATRI Tours difference — read their stories.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"The Kashi Varanasi tour organized by Mohan ji was absolutely exceptional. Every detail was taken care of — the Ganga Aarti, the temple darshan, the accommodation. A truly blessed journey."</p>
+        <div class="testi-author">
+          <div class="testi-av">R</div>
+          <div class="testi-info"><strong>Rajesh Kumar</strong><span>Kashi Varanasi Darshan</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"Our Chardham Yatra was enriching and spiritually uplifting. The attention to senior citizens was outstanding — we felt safe and cared for throughout. God bless Mohan ji!"</p>
+        <div class="testi-author">
+          <div class="testi-av">A</div>
+          <div class="testi-info"><strong>Anita Sharma</strong><span>Chardham Yatra</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"Sri Mohan Acharya truly understands the spiritual significance of each destination. Our group of 25 had a flawless, deeply meaningful experience. Highly recommend ATRI Tours!"</p>
+        <div class="testi-author">
+          <div class="testi-av">S</div>
+          <div class="testi-info"><strong>Suresh Gowda</strong><span>Group Pilgrimage Tour</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"Amarnath Yatra with ATRI Tours was a dream come true. All permits, accommodation and porter arrangements handled perfectly. A challenging trek made divinely smooth."</p>
+        <div class="testi-author">
+          <div class="testi-av">P</div>
+          <div class="testi-info"><strong>Priya Nair</strong><span>Amarnath Yatra</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"Being senior citizens, we worried about the Vaishnodevi trek. ATRI Tours arranged helicopter, comfortable stays and constant support. One of the best decisions we ever made."</p>
+        <div class="testi-author">
+          <div class="testi-av">L</div>
+          <div class="testi-info"><strong>Lakshmi & Venkat</strong><span>Vaishnodevi Yatra</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"The South India Temple Tour was beautifully organized. Tirupati darshan, Rameswaram, Madurai — all flawless. The team's passion for each sacred site made every moment special."</p>
+        <div class="testi-author">
+          <div class="testi-av">K</div>
+          <div class="testi-info"><strong>Kavitha Reddy</strong><span>South India Temple Tour</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA STRIP ══════════════ -->
+<div class="cta-strip">
+  <div class="wrap cta-strip-inner">
+    <div class="tag tag-white reveal" style="margin:0 auto 14px;display:inline-block">Ready to Begin Your Sacred Journey?</div>
+    <h2 class="reveal">Let's Plan Your<br><em>Perfect Pilgrimage</em></h2>
+    <p class="reveal">Connect with Sri Mohan Acharya today. We'll craft an itinerary that honours your faith and exceeds your expectations.</p>
+    <div class="cta-btns reveal">
+      <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20would%20like%20to%20plan%20a%20pilgrimage%20tour.%20Please%20guide%20me." class="btn btn-gold" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      <a href="tel:+918088017328" class="btn btn-outline-white"><i class="fas fa-phone"></i> +91 80880 17328</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:60px">
+      <div class="eyebrow" style="justify-content:center">Get In Touch</div>
+      <h2 class="h-disp" style="text-align:center">Book Your <em>Sacred Journey</em></h2>
+      <div class="divider-gold" style="margin:18px auto"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="c-info-title">Contact Information</div>
+        <div class="c-item">
+          <div class="c-icon"><i class="fas fa-phone"></i></div>
+          <div class="c-detail">
+            <strong>Phone / WhatsApp</strong>
+            <a href="tel:+918088017328">+91 80880 17328</a>
+            <p style="font-size:.78rem;color:var(--muted);margin-top:2px">Sri Mohan Acharya</p>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon"><i class="fas fa-envelope"></i></div>
+          <div class="c-detail">
+            <strong>Email</strong>
+            <a href="mailto:info@atritours.com">info@atritours.com</a>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon"><i class="fas fa-clock"></i></div>
+          <div class="c-detail">
+            <strong>Office Hours</strong>
+            <p>Monday – Saturday<br>10:00 AM – 5:00 PM</p>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-icon"><i class="fas fa-location-dot"></i></div>
+          <div class="c-detail">
+            <strong>Office Address</strong>
+            <p>Rajarajeshwari Nilaya, Prashantha Nagar,<br>Water Tank Park Road, DevarayaPatna,<br>Tumakuru, Karnataka – 572104</p>
+          </div>
+        </div>
+        <div class="c-actions">
+          <a href="https://wa.me/918088017328?text=Hello%20Mohan%20ji%2C%20I%20would%20like%20to%20enquire%20about%20a%20tour%20package." class="c-wa" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+          <a href="tel:+918088017328" class="c-call"><i class="fas fa-phone"></i> Call Now</a>
+        </div>
+      </div>
+      <div class="c-form-wrap reveal reveal-delay-2">
+        <div class="c-form-title">Send an Enquiry</div>
+        <div class="c-form-sub">Fill in your details and we'll get back to you shortly via WhatsApp.</div>
+        <form onsubmit="sendToWA(event)">
+          <div class="f-row">
+            <div class="f-group">
+              <label>Your Name *</label>
+              <input type="text" id="fn" placeholder="e.g. Ramesh Sharma" required/>
+            </div>
+            <div class="f-group">
+              <label>Phone / WhatsApp *</label>
+              <input type="tel" id="fp" placeholder="+91 XXXXX XXXXX" required/>
+            </div>
+          </div>
+          <div class="f-group">
+            <label>Email Address</label>
+            <input type="email" id="fe" placeholder="your@email.com"/>
+          </div>
+          <div class="f-group">
+            <label>Tour of Interest</label>
+            <select id="ft">
+              <option value="">— Select a Tour Package —</option>
+              <option>Kashi Varanasi Darshan</option>
+              <option>Chardham Yatra</option>
+              <option>Amarnath Yatra</option>
+              <option>Vaishnodevi Yatra</option>
+              <option>South India Temple Tour</option>
+              <option>Custom Group / Family Tour</option>
+              <option>Cultural & Heritage Tour</option>
+              <option>Wellness & Ayurveda Retreat</option>
+              <option>International Tour</option>
+              <option>Other / General Enquiry</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>Your Message</label>
+            <textarea id="fm" placeholder="Number of people, preferred dates, special requirements..."></textarea>
+          </div>
+          <button type="submit" class="f-submit"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="logo" style="display:inline-flex">
+          <div class="logo-mark" style="background:transparent;border-color:rgba(192,149,74,.4)">AT</div>
+          <div class="logo-text">
+            <div class="logo-name">ATRI Tours</div>
+            <div class="logo-sub" style="color:var(--gold)">Private Limited</div>
+          </div>
+        </a>
+        <p class="f-brand-desc">India's trusted pilgrimage and cultural tour specialist. Curated sacred journeys by Sri Mohan Acharya — connecting pilgrims with the divine heritage of Incredible India since 2014.</p>
+        <div class="social-row">
+          <a href="#" class="soc" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="soc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/918088017328" class="soc" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="soc" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="soc" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="f-col-title">Navigation</div>
+        <a href="#home" class="f-link">Home</a>
+        <a href="#services" class="f-link">Services</a>
+        <a href="#destinations" class="f-link">Destinations</a>
+        <a href="#packages" class="f-link">Tour Packages</a>
+        <a href="#about" class="f-link">About Us</a>
+        <a href="#testimonials" class="f-link">Testimonials</a>
+        <a href="#contact" class="f-link">Contact</a>
+      </div>
+      <div>
+        <div class="f-col-title">Popular Tours</div>
+        <a href="#contact" class="f-link">Kashi Varanasi Darshan</a>
+        <a href="#contact" class="f-link">Chardham Yatra</a>
+        <a href="#contact" class="f-link">Amarnath Yatra</a>
+        <a href="#contact" class="f-link">Vaishnodevi Yatra</a>
+        <a href="#contact" class="f-link">South India Temples</a>
+        <a href="#contact" class="f-link">Custom Group Tours</a>
+        <a href="#contact" class="f-link">Wellness Retreats</a>
+      </div>
+      <div>
+        <div class="f-col-title">Contact Info</div>
+        <div class="f-contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+918088017328">+91 80880 17328</a>
+        </div>
+        <div class="f-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/918088017328" target="_blank">WhatsApp Us</a>
+        </div>
+        <div class="f-contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@atritours.com">info@atritours.com</a>
+        </div>
+        <div class="f-contact-item">
+          <i class="fas fa-clock"></i>
+          <p>Mon–Sat: 10 AM – 5 PM</p>
+        </div>
+        <div class="f-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <p>Tumakuru, Karnataka – 572104</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ATRI Tours Private Limited. All rights reserved. | Founded by Sri Mohan Acharya</p>
+      <div class="f-bot-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#contact">Book a Tour</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ JAVASCRIPT ══════════════ -->
+<script>
+// ── Navbar scroll ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', window.scrollY > 60);
+  document.getElementById('btt').classList.toggle('show', window.scrollY > 500);
+}, { passive: true });
+
+// ── Back to top ──
+document.getElementById('btt').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ── Mobile menu ──
+const burger = document.getElementById('burger');
+const mobMenu = document.getElementById('mobMenu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  mobMenu.classList.toggle('open');
+});
+function closeMob() { burger.classList.remove('open'); mobMenu.classList.remove('open'); }
+document.addEventListener('click', e => {
+  if (!burger.contains(e.target) && !mobMenu.contains(e.target)) closeMob();
+});
+
+// ── Scroll reveal ──
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ── Counter animation ──
+const counters = document.querySelectorAll('.counter');
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.target;
+    const dur = 1800, step = target / (dur / 16);
+    let cur = 0;
+    const tick = () => {
+      cur = Math.min(cur + step, target);
+      el.textContent = Math.floor(cur).toLocaleString('en-IN');
+      if (cur < target) requestAnimationFrame(tick);
+    };
+    tick();
+    countObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+counters.forEach(c => countObs.observe(c));
+
+// ── Form → WhatsApp ──
+function sendToWA(e) {
+  e.preventDefault();
+  const n = document.getElementById('fn').value.trim();
+  const p = document.getElementById('fp').value.trim();
+  const em = document.getElementById('fe').value.trim();
+  const t = document.getElementById('ft').value;
+  const m = document.getElementById('fm').value.trim();
+  const msg = `Hello Mohan ji,\n\n*New Tour Enquiry from Website*\n\n👤 Name: ${n}\n📞 Phone: ${p}${em ? `\n📧 Email: ${em}` : ''}\n🗺 Tour Interest: ${t || 'General Enquiry'}\n\n💬 Message: ${m || 'Please share tour details and pricing.'}\n\nThank you!`;
+  window.open(`https://wa.me/918088017328?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// ── Smooth scroll for all hash links ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
